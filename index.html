@@ -19,6 +19,7 @@
             <div class="form-group">
                 <label for="sel1"> animal</label>
                 <select class="form-control" id="sel1" onchange="select1()">
+                    <option value="1">select</option>
                   <option value="bears">bears</option>
                   <option value="lions">lions</option>
                 </select>
@@ -48,13 +49,13 @@
             <div class="card p2">
                 <img class="card-img-top " src="img/t22.jpg" alt="">
             </div>
-            <div class="card">
+            <div class="card t1">
                 <img class="card-img-top" src="img/l1.jpg" alt="">
             </div>
-            <div class="card">
+            <div class="card t1">
                 <img class="card-img-top" src="img/l12.jpg" alt="">
             </div>
-            <div class="card">
+            <div class="card t2">
                 <img class="card-img-top" src="img/l2.jpg" alt="">
             </div>
           </div>
@@ -81,22 +82,48 @@ function select1() {
 }
 function select2() {
     var sel21=document.getElementById("sel2").value;
-  if (sel21=="panda")
-{      var m=document.getElementsByClassName("p1");
+    var sel22=document.getElementById("sel1").value;
+switch(sel22){case "bears":switch(sel21){
+    case "panda":var m=document.getElementsByClassName("p1");
    for(i=0;i<=m.length;i++)
-     {m1.style.display="none";
-     }
-} else if (sel21=="other")
-  {var m1=document.getElementsByClassName("p2");
-   for(i=0;i<=m1.length;i++)
      {
-         m1[i].style.display="block";
-     }
-}
-                
+         m[i].style.display="block";
+     };
+     var m1=document.getElementsByClassName("p2");
+   for(j=0;j<=m1.length;j++)
+     {
+         m1[j].style.display="block";
+     }break;
+     case "other":var m=document.getElementsByClassName("p2");
+   for(i=0;i<=m.length;i++)
+     {
+         m[i].style.display="block";
+     };
+     break;
+     default: var m = "...";
+} ;break;
+case "lions":switch(sel21){
+    case "tiger":var m=document.getElementsByClassName("t1");
+   for(i=0;i<=m.length;i++)
+     {
+         m[i].style.display="block";
+     };break;
+     case "lion":var m=document.getElementsByClassName("t2");
+   for(i=0;i<=m.length;i++)
+     {
+         m[i].style.display="block";
+     };
+     break;
+     default: var m = "...";
+} ;break;     default: var m = "...";
 }
 
+               
+}
+
+
 </script>
+
    <!--js style-->
    <script src="js/popper.min.js"></script>
    <script src="js/jquery-3.2.1.min.js"></script>
