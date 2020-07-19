@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->  
  <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="styleshe">
+    <link href="css/style.css" rel="stylesheet">
 
-<style>
-    </style>
     <body>
 <section>
   <div class="container-fluid">
@@ -17,8 +15,48 @@
         <div class="col-sm-12 bg-light p-4">
             <h3 class="text-center ">animals photos</h3>
           </div>  
+          <div class="col-sm-6 bg-light p-4">
+            <div class="form-group">
+                <label for="sel1"> animal</label>
+                <select class="form-control" id="sel1">
+                  <option>bears</option>
+                  <option>lions</option>
+                </select>
+              </div>         
+              </div> 
+              <div class="col-sm-6 bg-light p-4">
+                <div class="form-group">
+                    <label for="sel1"> type</label>
+                    <select class="form-control" id="sel2">
+                      <option>b1</option>
+                      <option>b2</option>
+                      <option>l1</option>
+                      <option>l2</option>
+                    </select>
+                  </div>         
+                  </div> 
+          <div class="col-4  hide t" ><img src="img/t1.jpg"></div>
+          <div class="col-4  hide t"><img src="img/t11.jpg"></div>
+          <div class="col-4  hide t"><img src="img/t111.jpg"></div>
+          <div class="col-4  hide b"><img src="img/t2.jpg"></div>
+          <div class="col-4  hide b"><img src="img/t22.jpg"></div>
+          <div class="col-4  hide l"><img src="img/l1.jpg"></div>
+          <div class="col-4  hide l"><img src="img/l12.jpg"></div>
+          <div class="col-4  hide m"><img src="img/l2.jpg"></div>
     </div>
   </div>
+  <script>
+      var s= document.getElementsByClassName("t");
+      var s1= document.getElementsByClassName("b");
+
+      var l= document.getElementById("sel2");
+      if (l.value=="b1")
+             s.style.display="block";
+      else if (l.value=="b2")
+             s.style.display="block"
+      
+
+  </script>
 </section>
    <!--js style-->
    <script src="js/popper.min.js"></script>
