@@ -1,5 +1,4 @@
 body{background-image: url("../immg/pink-grey-and-white-petaled-flowers-clip-art-2395251.jpg");
-height: 100vh;
 background-repeat: no-repeat;
 background-size: contain;
 background-position: center;}
@@ -10,9 +9,15 @@ background-position: center;}
    background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-height: 100vh;
+height: auto;
 width: 100vw;}
 .con {
     background-color: #00000080;
     color: #cacaca;
+}
+.con h2{
+color: yellow;
+padding-left: 10px;
+border-left: 2px solid yellow;
+margin-bottom: 10px;
 }
