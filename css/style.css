@@ -1,2 +1,12 @@
 
 .card-columns .card{display: none;transition: ease 1s;}
+.sign{background-image: url("../img/geometric-decoration-5836.jpg");
+   background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
+width: 100vw;}
+.con {
+    background-color: #00000080;
+    color: #cacaca;
+}
