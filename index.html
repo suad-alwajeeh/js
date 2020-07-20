@@ -34,28 +34,28 @@
                   </div>         
                   </div> 
           <div class="card-columns">
-              <div class="card p1">
+              <div class="card " id="p1">
                   <img class="card-img-top " src="img/t1.jpg" alt="">
               </div>
-              <div class="card p1">
+              <div class="card " id="p2">
                 <img class="card-img-top " src="img/t11.jpg" alt="">
             </div>
-            <div class="card p1">
+            <div class="card " id="p3">
                 <img class="card-img-top " src="img/t111.jpg" alt="">
             </div>
-            <div class="card p2">
+            <div class="card " id="p4">
                 <img class="card-img-top " src="img/t2.jpg" alt="">
             </div>
-            <div class="card p2">
+            <div class="card " id="p5">
                 <img class="card-img-top " src="img/t22.jpg" alt="">
             </div>
-            <div class="card t1">
+            <div class="card " id="p6">
                 <img class="card-img-top" src="img/l1.jpg" alt="">
             </div>
-            <div class="card t1">
+            <div class="card " id="p7">
                 <img class="card-img-top" src="img/l12.jpg" alt="">
             </div>
-            <div class="card t2">
+            <div class="card " id="p8">
                 <img class="card-img-top" src="img/l2.jpg" alt="">
             </div>
           </div>
@@ -65,68 +65,12 @@
      
   </script>
 </section>
-<script>
-function select1() {
-    var sel1=document.getElementById("sel1").value;
-    switch (sel1){
-                  case "bears":var me=["panda","other"];break;
-                  case "lions":var me=["tiger","lion"];break;
-                  default: var me = "...";
-                }
-                var sel2="";
-                for(i=0;i<me.length;i++){
-
-                    sel2=sel2+"<option value='"+me[i]+"'>"+me[i]+"</option>";
-                }
-                document.getElementById('sel2').innerHTML=sel2;
-}
-function select2() {
-    var sel21=document.getElementById("sel2").value;
-    var sel22=document.getElementById("sel1").value;
-switch(sel22){case "bears":switch(sel21){
-    case "panda":var m=document.getElementsByClassName("p1");
-   for(i=0;i<=m.length;i++)
-     {
-         m[i].style.display="block";
-     };
-     var m1=document.getElementsByClassName("p2");
-   for(j=0;j<=m1.length;j++)
-     {
-         m1[j].style.display="block";
-     }break;
-     case "other":var m=document.getElementsByClassName("p2");
-   for(i=0;i<=m.length;i++)
-     {
-         m[i].style.display="block";
-     };
-     break;
-     default: var m = "...";
-} ;break;
-case "lions":switch(sel21){
-    case "tiger":var m=document.getElementsByClassName("t1");
-   for(i=0;i<=m.length;i++)
-     {
-         m[i].style.display="block";
-     };break;
-     case "lion":var m=document.getElementsByClassName("t2");
-   for(i=0;i<=m.length;i++)
-     {
-         m[i].style.display="block";
-     };
-     break;
-     default: var m = "...";
-} ;break;     default: var m = "...";
-}
-
-               
-}
-
-
-</script>
 
    <!--js style-->
    <script src="js/popper.min.js"></script>
    <script src="js/jquery-3.2.1.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script src="js/script.js"></script>
+   <scr>
     </body>
     </html>

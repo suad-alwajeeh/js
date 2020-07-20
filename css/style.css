@@ -1,5 +1,2 @@
-.card-columns .p1{display: none;}
-.card-columns .p2{display: none;}
-.card-columns .t2{display: none;}
-.card-columns .t1{display: none;}
-.card-columns .card{display: none;}
+
+.card-columns .card{display: none;transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 1s;}
