@@ -1,5 +1,11 @@
+body{background-image: url("../immg/pink-grey-and-white-petaled-flowers-clip-art-2395251.jpg");
+height: 100vh;
+background-repeat: no-repeat;
+background-size: contain;
+background-position: center;}
 
-.card-columns .card{display: none;transition: ease 1s;}
+
+
 .sign{background-image: url("../img/geometric-decoration-5836.jpg");
    background-position: center;
 background-repeat: no-repeat;

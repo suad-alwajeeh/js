@@ -1,4 +1,30 @@
+
 function select1() {
+  var a1=document.getElementById("sel1").value;
+  var city ='<option value="s">صنعاء</option></br><option value="i">اب</option>';
+  var city2 ='<option value="g">القاهرة</option></br><option value="p">بورسعيد</option>';
+ if(a1==="y"){
+   document.getElementById("sel2").innerHTML=city;
+
+ }else if(a1==="e"){
+  document.getElementById("sel2").innerHTML=city2;
+
+}
+}
+function select2() {
+  var a2=document.getElementById("sel2").value;
+  var s1 ='<img  src="immg/s1.jpg"></div><div class="col"><img  src="immg/s2.jpg"></div><div class="col"><img  src="immg/s1.jpg"></div>';
+  var i1 ='<img  src="immg/i1.jpg"></div><div class="col"><img  src="immg/i2.jpg"></div><div class="col"><img  src="immg/i3.jpg"></div>';
+ if(a2==="s"){
+   document.getElementById("sel").innerHTML=s1;
+
+ }else if(a2==="i"){
+  document.getElementById("sel").innerHTML=i1;
+
+}
+}
+
+/*function select1() {
     var sel1=document.getElementById("sel1").value;
     switch (sel1){
                   case "bears":var me=["panda","other"];break;
@@ -57,4 +83,4 @@ var x=document.getElementById("sel2").value;
     document.getElementById("p8").style.display="block";
 
   }
-}
+}*/

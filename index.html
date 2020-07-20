@@ -11,64 +11,72 @@
     <body>
 <section>
   <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 bg-light p-4">
-            <h3 class="text-center ">animals photos</h3>
+    <div class="row " style="direction: rtl;">
+        <div class="col-sm-12  p-4">
+            <h3 class="text-center ">صور من بلادي</h3>
           </div>  
-          <div class="col-sm-6 bg-light p-4">
+          <div class="col-sm-6  p-4">
             <div class="form-group">
-                <label for="sel1"> animal</label>
-                <select class="form-control" id="sel1" onchange="select1()">
-                  <option value="bears">bears</option>
-                  <option value="lions">lions</option>
+                <label for="sel1" > الدولة</label>
+                <select onchange="select1()" class="form-control" id="sel1" >
+                  <option value="y">اليمن</option>
+                  <option value="e">مصر</option>
                 </select>
               </div>         
               </div> 
-              <div class="col-sm-6 bg-light p-4">
+              <div class="col-sm-6 p-4">
                 <div class="form-group">
-                    <label for="sel1"> type</label>
+                    <label for=""> المدينة</label>
                     <select class="form-control" onchange="select2()" id="sel2">
                      
                     </select>
                   </div>         
-                  </div> 
-          <div class="card-columns">
-              <div class="card " id="p1">
-                  <img class="card-img-top " src="img/t1.jpg" alt="">
-              </div>
-              <div class="card " id="p2">
-                <img class="card-img-top " src="img/t11.jpg" alt="">
-            </div>
-            <div class="card " id="p3">
-                <img class="card-img-top " src="img/t111.jpg" alt="">
-            </div>
-            <div class="card " id="p4">
-                <img class="card-img-top " src="img/t2.jpg" alt="">
-            </div>
-            <div class="card " id="p5">
-                <img class="card-img-top " src="img/t22.jpg" alt="">
-            </div>
-            <div class="card " id="p6">
-                <img class="card-img-top" src="img/l1.jpg" alt="">
-            </div>
-            <div class="card " id="p7">
-                <img class="card-img-top" src="img/l12.jpg" alt="">
-            </div>
-            <div class="card " id="p8">
-                <img class="card-img-top" src="img/l2.jpg" alt="">
-            </div>
-          </div>
+                  </div>           
     </div>
-  </div>
+    <div class="row"  id="sel">
+        
+    </div>
   <script>
-     
+     function select1() {
+  var a1=document.getElementById("sel1").value;
+  var city ='<option value="s">صنعاء</option></br><option value="i">اب</option>';
+  var city2 ='<option value="g">القاهرة</option></br><option value="p">بورسعيد</option>';
+ if(a1==="y"){
+   document.getElementById("sel2").innerHTML=city;
+
+ }else if(a1==="e"){
+  document.getElementById("sel2").innerHTML=city2;
+}
+}
+
+function select2() {
+  var a2=document.getElementById("sel2").value;
+  var s1 ='<div class="col"><img class="w-100" src="immg/s1.jpg"></div><div class="col"><img class="w-100" src="immg/s2.jpg"></div><div class="col"><img class="w-100" src="immg/s1.jpg"></div>';
+  var i1 ='<div class="col"><img class="w-100" src="immg/e1.jpg"></div><div class="col"><img class="w-100" src="immg/e2.jpg"></div><div class="col"><img class="w-100" src="immg/e1.jpg"></div>';
+  var g1 ='<div class="col"><img class="w-100" src="immg/g1.jpg"></div><div class="col"><img class="w-100" src="immg/g2.jpg"></div><div class="col"><img class="w-100" src="immg/g3.jpg"></div>';
+  var p1 ='<div class="col"><img class="w-100" src="immg/por1.jpg"></div><div class="col"><img class="w-100" src="immg/por2.jpg"></div><div class="col"><img class="w-100" src="immg/por3.jpg"></div>';
+
+  if(a2==="s"){
+   document.getElementById("sel").innerHTML=s1;
+
+ }else if(a2==="i"){
+  document.getElementById("sel").innerHTML=i1;
+
+}else if(a2==="g"){
+  document.getElementById("sel").innerHTML=g1;
+
+}else if(a2==="p"){
+  document.getElementById("sel").innerHTML=p1;
+
+}else{alert("no thing");}
+}
+
   </script>
+  </div>
 </section>
 
+
+
    <!--js style-->
-   <script src="js/popper.min.js"></script>
-   <script src="js/jquery-3.2.1.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/script.js"></script>
     </body>
     </html>
