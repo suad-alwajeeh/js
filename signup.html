@@ -126,7 +126,7 @@ return false;
         {  
           document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email must containt @ and . </h6>";
       return false;  
-      }  else if(pass.match(lowerCaseLetters) =="" && pass.match(upperCaseLetters)=="" && pass.match(numbers)=="") {  
+      }  else if(pass.match(/[^0-9]/g)  && pass.match(/[^A-Z]/g) && pass.match(/[^a-z]/g)) {  
         document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>age must be less than 19 </h6>";
         return false;  
 
