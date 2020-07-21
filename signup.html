@@ -7,7 +7,7 @@
     <!-- CSS -->  
  <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+</head>
     <body>
 <section class="sign">
   <div class="container">
@@ -16,30 +16,41 @@
          <div class="con">
          <h2 class="text-left mt-5"> Register Form</h2>
          <div class="container">
-         <form action="index.html" id="signup" onsubmit="return valid();">
+         <form action="index.html" id="form" name="form1" onsubmit="return valid();">
             <div class="form-group">
               <label for="name">your name</label>
-              <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="text" name="name"  id="name" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message"></div>
             </div>
             <div class="form-group">
               <label for="age">your age</label>
-              <input type="text" name="age" id="age" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="text" name="age"  id="age" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message1"></div>
+
             </div>
             <div class="form-group">
               <label for="email">email address</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="email" name="email"  id="email" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message2"></div>
+
             </div>
             <div class="form-group">
               <label for="pass">password</label>
-              <input type="password" name="pass" id="pass" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="password" name="pass"  id="pass" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message3"></div>
+
             </div>
             <div class="form-group">
               <label for="conpass">confirm password</label>
-              <input type="password" name="conpass" id="conpass" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="password" name="conpass"  id="conpass" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message4"></div>
+
             </div>
             <div class="form-group">
               <label for="text">website</label>
-              <input type="website" name="website" id="website" class="form-control" placeholder="" aria-describedby="helpId">
+              <input type="website" name="website"  id="website" class="form-control" placeholder="" aria-describedby="helpId">
+              <div id="message5"></div>
+
             </div>
             <div class="form-group">
             <button type="submit" class="btn btn-dark w-100">Submit</button>
@@ -53,8 +64,64 @@
     </div>
   </div>
   <script>
-     
-  </script>
+    
+    function valid(){
+
+    var form=document.getElementById("form");
+  var name=document.form1.name.value;
+  var pass=document.getElementById("pass").value;
+  var conpass=document.getElementById("conpass").value;
+  var email=document.getElementById("email").value;
+  var age=document.getElementById("age").value;
+  var website=document.getElementById("website").value;
+  var at=email.indexOf("@");  
+    var dot=email.lastIndexOf("."); 
+    var numbers = /[0-9]/g;
+    var upperCaseLetters = /[A-Z]/g;
+    var lowerCaseLetters = /[a-z]/g;
+
+
+  if(name==""){
+    document.getElementById("message").innerHTML="<h6 style='color:red;'>name can't be blank, this file requaired</h6>";
+      return false; 
+  }else if (age==""){
+
+    document.getElementById("message1").innerHTML="<h6 style='color:red;'>age can't be blank, this file requaired</h6>";
+    return false;
+  }else if (email==""){
+
+document.getElementById("message2").innerHTML="<h6 style='color:red;'>email can't be blank, this file requaired</h6>";
+return false;
+}
+else if (pass==""){
+
+document.getElementById("message3").innerHTML="<h6 style='color:red;'>password can't be blank, this file requaired</h6>";
+return false;
+}else if (conpass==""){
+
+document.getElementById("message4").innerHTML="<h6 style='color:red;'>confpassword can't be blank, this file requaired</h6>";
+return false;
+}else if (website==""){
+document.getElementById("message5").innerHTML="<h6 style='color:red;'>website can't be blank, this file requaired</h6>";
+return false;
+}else if (age>18 ){
+
+document.getElementById("message1").innerHTML="<h6 style='color:red;'>age must be less than 19 </h6>";
+return false;
+}
+else if (conpass != pass){
+
+document.getElementById("message4").innerHTML="<h6 style='color:red;'>confpass must be as pass </h6>";
+return false;
+}else if (at<1 || dot<at+2 || dot+2>=x.length)
+        {  
+          document.getElementById("message2").innerHTML="<h6 style='color:red;'>email must containt @ and . </h6>";
+      return false;  
+      }  else if(pass.value.match(lowerCaseLetters) && pass.value.match(upperCaseLetters) && pass.value.match(numbers)) {  
+      alert("nnnnnnnnnnnnn");
+      }
+   }
+</script>
 </section>
 
    <!--js style-->
