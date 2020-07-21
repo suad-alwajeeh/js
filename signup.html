@@ -1,14 +1,14 @@
 <html>
 <head>
 <title> js</title>
-    <!-- Required meta tags -->
+    <!-- Requiyellow meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->  
  <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
-    <body>
+    <body style="background-image: none;">
 <section class="sign">
   <div class="container">
     <div class="row">
@@ -77,49 +77,60 @@
   var at=email.indexOf("@");  
     var dot=email.lastIndexOf("."); 
     var numbers = /[0-9]/g;
-    var upperCaseLetters = /[A-Z]/g;
-    var lowerCaseLetters = /[a-z]/g;
+    var ul = /[A-Z]/g;
+    var ll = /[a-z]/g;
 
 
-  if(name==""){
-    document.getElementById("message").innerHTML="<h6 style='color:red;'>name can't be blank, this file requaired</h6>";
+    if(name=="" && age=="" && email=="" && pass=="" && conpass==""&& website==""){
+    document.getElementById("message").innerHTML="<h6 style='color:yellow;'>name can't be blank, this file requaiyellow</h6>";
+    document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email can't be blank, this file requaiyellow</h6>";  
+  document.getElementById("message1").innerHTML="<h6 style='color:yellow;'>age can't be blank, this file requaiyellow</h6>";
+    document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>password can't be blank, this file requaiyellow</h6>";
+    document.getElementById("message4").innerHTML="<h6 style='color:yellow;'>confpassword can't be blank, this file requaiyellow</h6>";
+    document.getElementById("message5").innerHTML="<h6 style='color:yellow;'>website can't be blank, this file requaiyellow</h6>";
+
+      return false; 
+  }else if(name==""){
+    document.getElementById("message").innerHTML="<h6 style='color:yellow;'>name can't be blank, this file requaiyellow</h6>";
       return false; 
   }else if (age==""){
 
-    document.getElementById("message1").innerHTML="<h6 style='color:red;'>age can't be blank, this file requaired</h6>";
+    document.getElementById("message1").innerHTML="<h6 style='color:yellow;'>age can't be blank, this file requaiyellow</h6>";
     return false;
   }else if (email==""){
 
-document.getElementById("message2").innerHTML="<h6 style='color:red;'>email can't be blank, this file requaired</h6>";
+document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email can't be blank, this file requaiyellow</h6>";
 return false;
 }
 else if (pass==""){
 
-document.getElementById("message3").innerHTML="<h6 style='color:red;'>password can't be blank, this file requaired</h6>";
+document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>password can't be blank, this file requaiyellow</h6>";
 return false;
 }else if (conpass==""){
 
-document.getElementById("message4").innerHTML="<h6 style='color:red;'>confpassword can't be blank, this file requaired</h6>";
+document.getElementById("message4").innerHTML="<h6 style='color:yellow;'>confpassword can't be blank, this file requaiyellow</h6>";
 return false;
 }else if (website==""){
-document.getElementById("message5").innerHTML="<h6 style='color:red;'>website can't be blank, this file requaired</h6>";
+document.getElementById("message5").innerHTML="<h6 style='color:yellow;'>website can't be blank, this file requaiyellow</h6>";
 return false;
 }else if (age>18 ){
 
-document.getElementById("message1").innerHTML="<h6 style='color:red;'>age must be less than 19 </h6>";
+document.getElementById("message1").innerHTML="<h6 style='color:yellow;'>age must be less than 19 </h6>";
 return false;
 }
 else if (conpass != pass){
 
-document.getElementById("message4").innerHTML="<h6 style='color:red;'>confpass must be as pass </h6>";
+document.getElementById("message4").innerHTML="<h6 style='color:yellow;'>confpass must be as pass </h6>";
 return false;
 }else if (at<1 || dot<at+2 || dot+2>=x.length)
         {  
-          document.getElementById("message2").innerHTML="<h6 style='color:red;'>email must containt @ and . </h6>";
+          document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email must containt @ and . </h6>";
       return false;  
-      }  else if(pass.value.match(lowerCaseLetters) && pass.value.match(upperCaseLetters) && pass.value.match(numbers)) {  
-      alert("nnnnnnnnnnnnn");
-      }
+      }  else if(pass.match(lowerCaseLetters) =="" && pass.match(upperCaseLetters)=="" && pass.match(numbers)=="") {  
+        document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>age must be less than 19 </h6>";
+        return false;  
+
+       }else{return true}
    }
 </script>
 </section>
