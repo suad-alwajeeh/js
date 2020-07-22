@@ -18,7 +18,8 @@
           <div class="col-sm-6  p-4">
             <div class="form-group">
                 <label for="sel1" > الدولة</label>
-                <select onchange="select1()" class="form-control" id="sel1" >
+                <select onchange="me()" class="form-control" id="sel1" >
+                 <option value="n">اختر الدولة</option>
                   <option value="y">اليمن</option>
                   <option value="e">مصر</option>
                 </select>
@@ -27,8 +28,13 @@
               <div class="col-sm-6 p-4">
                 <div class="form-group">
                     <label for=""> المدينة</label>
-                    <select class="form-control" onchange="select2()" id="sel2">
-                     
+                    <select class="form-control" id="sel2" >
+                        <option id="defult" value="d">اختر مدينتك</option>
+                        <option id="y1" value="s">صنعاء</option>
+                        <option id="y2" value="i">اب</option>
+                        <option id="e1" value="g">القاهرة</option>
+                        <option id="e2" value="p">بورسعيد</option>
+
                     </select>
                   </div>         
                   </div>           
@@ -37,9 +43,57 @@
         
     </div>
   <script>
+   window.onload =function() {
+    document.getElementsByTagName("opsion").innerHTML=""; 
+    }
+      
+     var m=document.getElementById("sel1");
+//  m.addEventListener("change",me);
+      function me() {
+               var m1=document.getElementById("sel1").value;
+                       if(m1=="y"){
+                           console.log("city must appear");
+                           document.getElementById("e1").style.display="none";
+                           document.getElementById("e2").style.display="none";
+                           document.getElementById("y1").style.display="block";
+                           document.getElementById("y2").style.display="block";
+                          }else if(m1=="e"){
+                                                         console.log("city must appear");
 
-    document.getElementById("sel1").addEventListener("change", select1);
-    document.getElementById("sel2").addEventListener("change", select2);
+                           document.getElementById("y1").style.display="none";
+                           document.getElementById("y2").style.display="none";
+                           document.getElementById("e1").style.display="block";
+                           document.getElementById("e2").style.display="block";
+                          }
+                         }
+      
+         var o=document.getElementById("sel2");
+      o.onchange= function(){
+               var o1=document.getElementById("sel2").value;
+               var s1 ='<div class="col"><img class="w-100" src="immg/s1.jpg"></div><div class="col"><img class="w-100" src="immg/s2.jpg"></div><div class="col"><img class="w-100" src="immg/s1.jpg"></div>';
+  var i1 ='<div class="col"><img class="w-100" src="immg/e1.jpg"></div><div class="col"><img class="w-100" src="immg/e2.jpg"></div><div class="col"><img class="w-100" src="immg/e1.jpg"></div>';
+  var g1 ='<div class="col"><img class="w-100" src="immg/g1.jpg"></div><div class="col"><img class="w-100" src="immg/g2.jpg"></div><div class="col"><img class="w-100" src="immg/g3.jpg"></div>';
+  var p1 ='<div class="col"><img class="w-100" src="immg/por1.jpg"></div><div class="col"><img class="w-100" src="immg/por2.jpg"></div><div class="col"><img class="w-100" src="immg/por3.jpg"></div>';
+
+  if(o1=="s"){
+   document.getElementById("sel").innerHTML=s1;
+
+ }else if(o1=="i"){
+  document.getElementById("sel").innerHTML=i1;
+
+}else if(o1=="g"){
+  document.getElementById("sel").innerHTML=g1;
+
+}else if(o1=="p"){
+  document.getElementById("sel").innerHTML=p1;
+
+}
+                       }
+  
+      
+  
+      
+   /* document.getElementById("sel1").addEventListener("change", select1);
 
      function select1() {
   var a1=document.getElementById("sel1").value;
@@ -52,6 +106,7 @@
   document.getElementById("sel2").innerHTML=city2;
 }
 }
+    document.getElementById("sel2").addEventListener("change", select2);
 
 function select2() {
   var a2=document.getElementById("sel2").value;
@@ -74,7 +129,8 @@ function select2() {
 
 }else{alert("no thing");}
 }
-
+*/
+      
   </script>
   </div>
 </section>

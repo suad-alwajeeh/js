@@ -3,8 +3,10 @@ background-repeat: no-repeat;
 background-size: contain;
 background-position: center;}
 
-
-
+#y1{display: none;}
+#y2{display: none;}
+#e1{display: none;}
+#e2{display: none;}
 .sign{background-image: url("../img/geometric-decoration-5836.jpg");
    background-position: center;
 background-repeat: no-repeat;
