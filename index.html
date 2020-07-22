@@ -42,6 +42,28 @@
     <div class="row"  id="sel">
         
     </div>
+      <button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var pass = "yA"; 
+      var ll = /[a-z]/g;
+      var l1 = /[A-Z]/g;
+var l2 = /[0-9]/g;
+  var res1 = pass.match(ll);
+  var res2 = pass.match(l1);
+  var res3 = pass.match(l2);
+  if( pass = pass.match(res1)){
+    document.getElementById("demo").innerHTML = "ok";
+
+  }else{
+    document.getElementById("demo").innerHTML = "not found";
+
+  }
+}
+</script>
   <script>
    window.onload =function() {
     document.getElementsByTagName("opsion").innerHTML=""; 

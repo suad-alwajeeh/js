@@ -79,12 +79,12 @@
     var numbers = /[0-9]/g;
     var ul = /[A-Z]/g;
     var ll = /[a-z]/g;
-
+      
 
     if(name=="" && age=="" && email=="" && pass=="" && conpass==""&& website==""){
     document.getElementById("message").innerHTML="<h6 style='color:yellow;'>name can't be blank, this file requaiyellow</h6>";
     document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email can't be blank, this file requaiyellow</h6>";  
-  document.getElementById("message1").innerHTML="<h6 style='color:yellow;'>age can't be blank, this file requaiyellow</h6>";
+    document.getElementById("message1").innerHTML="<h6 style='color:yellow;'>age can't be blank, this file requaiyellow</h6>";
     document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>password can't be blank, this file requaiyellow</h6>";
     document.getElementById("message4").innerHTML="<h6 style='color:yellow;'>confpassword can't be blank, this file requaiyellow</h6>";
     document.getElementById("message5").innerHTML="<h6 style='color:yellow;'>website can't be blank, this file requaiyellow</h6>";
@@ -126,7 +126,7 @@ return false;
         {  
           document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email must containt @ and . </h6>";
       return false;  
-      }  else if(pass.match(/[^0-9]/g)  && pass.match(/[^A-Z]/g) && pass.match(/[^a-z]/g)) {  
+      }  else if( pass != str.match(l2)  && pass.match(/[^A-Z]/g) && pass.match(/[^a-z]/g)) {  
         document.getElementById("message3").innerHTML="<h6 style='color:yellow;'>age must be less than 19 </h6>";
         return false;  
 
@@ -136,9 +136,9 @@ return false;
 </section>
 
    <!--js style-->
-   <script src="js/popper.min.js"></script>
-   <script src="js/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
    <script src="js/bootstrap.min.js"></script>
-   <script src="js/script.js"></script>
     </body>
     </html>
