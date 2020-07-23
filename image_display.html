@@ -28,7 +28,6 @@
 
     </div>
     <div class="col-lo-12" id="im">
-        <img id="imm1" class="" style="width:200px;height:200px;"/>
         
     </div>
     <div class="col" id="imm">
@@ -79,18 +78,16 @@
         var fileInput = document.getElementById('im');
 var img = document.getElementById('imm');
 fileInput.onchange =function (){
+                if(fileInput.files.length>0){
+alert(fileInput.files.length);
     for(var i=0;i<=fileInput.files.length;i++)
     {
-  var file = fileInput.files.item(i);
-    var fname=fileInput.files.item(i).name;
-  //img.src = URL.createObjectURL(file);
-        img.innerHTML=" <img style='width:200px;height:200px;' src='"+URL.createObjectURL(file) +"' />";
-                     document.getElementById("p").innerHTML="total file counter"+fileInput.files.length;
-
-  img.onload = function (){
-    URL.revokeObjectURL(img.src);
-  }
-    }
+       var file = fileInput.files.item(i);
+       var fname=fileInput.files.item(i).name;
+       img.innerHTML=" <img style='width:200px;height:200px;' src='"+URL.createObjectURL(file) +"' />";
+       document.getElementById("p").innerHTML="total file counter"+fname;
+               }
+                }
 }
         </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
