@@ -9,7 +9,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
     <body style="background-image: none;">
-<section class="imageform">
+<!--section class="imageform">
 
 <div class="container-fluid">
 
@@ -18,28 +18,72 @@
     <h2 class="text-center">Image Upload</h2>
     </div>
     <div class="col-12">
-    <form action="" enctype="multipart/form-data" onsubmit="return displayImage();">
   <div class="form-group" >
     <label for="image">images </label>
-    <input accept="image/*"  type="file" value="" class="form-control" id="image" name="image" placeholder="" style="contain: "";">
+    <input accept="image/*" onchange="show()" style="display:none;"  type="file" class="form-control" id="image" name="image" multiple />
       
   </div>
-        <button type="submit" class="btn btn-primary">so</button>
-        </form>
-        <p>
+        <button type="submit" onclick="" class="btn btn-primary">go</button>
+        <p id="p">
         </p>
 
     </div>
+    <div class="col-lo-12" id="im">
+        <img id="output" class="h-50 w-100"/>
+    </div>
+    <div class="col" id=""></div>
     </div>
 </section>
     <script>
-        function displayImage(){
-     var imageName = document.getElementById("image");
-        document.getElementsByTagName("p").innerHTML="<img src='"+imageName.value+"'>";
-            alert(imageName.value);
+       /* var show1=function(event){
+        var imageload=document.getElementById("output");
+            imageload.style.backgroundImage=URL.createObjectURL(event.target.files[0]);
+            
+        };*/
+       function show(){
+       var f= document.getElementById("image");
+            for(var i=0;i<=f.files.length;i++){
+                  var fname=f.files.item(i).name;
+        var urlm=f.files[0];
+                var obji=URL.createObjectURL(urlm);
+                   var io=  document.getElementById("output");
+            io.src=obji;
+            img.onload=function(){
+                URL.revokeObjectURL(io.src);
+
+            }
+            }
+          
         }
-    </script>
+        /*function displayImage(){
+     var imageName = document.getElementById("image");
+            if(imageName.files.length>0){
+                alert(imageName.value);
+             document.getElementById("p").innerHTML="total file counter"+imageName.files.length;
+                for(var i=0;i<=imageName.files.length;i++){
+                  var fname=imageName.files.item(i).name;
+                    var fpath;
+                    document.getElementById("im").innerHTML="<img src='" + imageName.value +"'>";
+                }
+            }else{alert("noooooooo");}
+            
+        }*/
+        
+    </script>-->
    <!--js style-->
+        <input id="im" type="file"  accept="image/*">
+<img id="imm" />
+        <script>
+        var fileInput = document.getElementById('im');
+var img = document.getElementById('imm');
+fileInput.onchange =function (){
+  var file = fileInput.files[0];
+  img.src = URL.createObjectURL(file);
+  img.onload = function (){
+    URL.revokeObjectURL(img.src);
+  }
+}
+        </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
