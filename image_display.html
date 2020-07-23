@@ -9,7 +9,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
     <body style="background-image: none;">
-<!--section class="imageform">
+<section class="imageform">
 
 <div class="container-fluid">
 
@@ -19,9 +19,8 @@
     </div>
     <div class="col-12">
   <div class="form-group" >
-    <label for="image">images </label>
-    <input accept="image/*" onchange="show()" style="display:none;"  type="file" class="form-control" id="image" name="image" multiple />
-      
+    <label for="image">to load images click "here"</label>
+    <input id="im" type="file"  accept="image/*" style="display:;" class="form-control" name="image" multiple /> 
   </div>
         <button type="submit" onclick="" class="btn btn-primary">go</button>
         <p id="p">
@@ -29,9 +28,12 @@
 
     </div>
     <div class="col-lo-12" id="im">
-        <img id="output" class="h-50 w-100"/>
+        <img id="imm1" class="" style="width:200px;height:200px;"/>
+        
     </div>
-    <div class="col" id=""></div>
+    <div class="col" id="imm">
+    
+    </div>
     </div>
 </section>
     <script>
@@ -40,7 +42,7 @@
             imageload.style.backgroundImage=URL.createObjectURL(event.target.files[0]);
             
         };*/
-       function show(){
+       /* function show(){
        var f= document.getElementById("image");
             for(var i=0;i<=f.files.length;i++){
                   var fname=f.files.item(i).name;
@@ -55,7 +57,7 @@
             }
           
         }
-        /*function displayImage(){
+       function displayImage(){
      var imageName = document.getElementById("image");
             if(imageName.files.length>0){
                 alert(imageName.value);
@@ -69,19 +71,26 @@
             
         }*/
         
-    </script>-->
-   <!--js style-->
+    </script>
+   <!--js style
         <input id="im" type="file"  accept="image/*">
-<img id="imm" />
+<img id="imm" />-->
         <script>
         var fileInput = document.getElementById('im');
 var img = document.getElementById('imm');
 fileInput.onchange =function (){
-  var file = fileInput.files[0];
-  img.src = URL.createObjectURL(file);
+    for(var i=0;i<=fileInput.files.length;i++)
+    {
+  var file = fileInput.files.item(i);
+    var fname=fileInput.files.item(i).name;
+  //img.src = URL.createObjectURL(file);
+        img.innerHTML=" <img style='width:200px;height:200px;' src='"+URL.createObjectURL(file) +"' />";
+                     document.getElementById("p").innerHTML="total file counter"+fileInput.files.length;
+
   img.onload = function (){
     URL.revokeObjectURL(img.src);
   }
+    }
 }
         </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
