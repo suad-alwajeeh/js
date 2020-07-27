@@ -1,0 +1,44 @@
+<html>
+<head>
+<title> js</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->  
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <body>
+<section>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 bg-light p-4">
+            <h3 class="text-center ">charecter counter</h3>
+          </div>  
+     <div class="col-sm-12 bg-light p-4">
+
+      <form method="post">
+ <div class="form-group">
+                    <label for=""> text</label>
+     <textarea class="form-control"  id="text1" placeholder="Write what's you new" maxlength="200"></textarea>
+</br>
+      <div style="padding: 4px; float: left; font-size: 20px; font-family: Cocon; text-align: center;">the max chars must be just 200 :<span id="number"></span></div>
+          </div>
+</form>
+                          
+      </div>
+    <script src="js/jquery3.4.1.js"></script>
+ 
+     <script>
+     $('#text1').keyup(function(){
+     var c=$("#text1").val().length;
+     var n=$('#number').html(c);
+     });
+
+    </script>
+    </div>
+    </div>
+        </section>
+  </body>
+
+</html>
