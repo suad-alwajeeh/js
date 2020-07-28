@@ -23,3 +23,22 @@ padding-left: 10px;
 border-left: 2px solid yellow;
 margin-bottom: 10px;
 }
+#light {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    padding: 60px;
+    background: #111010b0;
+    left: 0px;
+    display: none;
+}
+
+.image{width: 100%;height: 50%}
+ .clos{
+    z-index: 10;
+    position: absolute;
+    top: 3%;
+    left: 96%;
+     display: none;
+}

@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->  
+        <script src="js/jquery3.4.1.js"></script>
  <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
+    </head>
     <body>
 <section>
   <div class="container-fluid">
@@ -42,10 +43,9 @@
     <div class="row"  id="sel">
         
     </div>
-      <button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
+      
+   <img  id="light" src="immg/por2.jpg">
+      <button onclick="set1()" id="close" class="clos btn btn-outline-danger ">x</button>
 <script>
 function myFunction() {
   var pass = "yA"; 
@@ -92,10 +92,10 @@ var l2 = /[0-9]/g;
          var o=document.getElementById("sel2");
       o.onchange= function(){
                var o1=document.getElementById("sel2").value;
-               var s1 ='<div class="col"><img class="w-100" src="immg/s1.jpg"></div><div class="col"><img class="w-100" src="immg/s2.jpg"></div><div class="col"><img class="w-100" src="immg/s1.jpg"></div>';
-  var i1 ='<div class="col"><img class="w-100" src="immg/e1.jpg"></div><div class="col"><img class="w-100" src="immg/e2.jpg"></div><div class="col"><img class="w-100" src="immg/e1.jpg"></div>';
-  var g1 ='<div class="col"><img class="w-100" src="immg/g1.jpg"></div><div class="col"><img class="w-100" src="immg/g2.jpg"></div><div class="col"><img class="w-100" src="immg/g3.jpg"></div>';
-  var p1 ='<div class="col"><img class="w-100" src="immg/por1.jpg"></div><div class="col"><img class="w-100" src="immg/por2.jpg"></div><div class="col"><img class="w-100" src="immg/por3.jpg"></div>';
+               var s1 ='<div class="col"><img class="image" id="src" onclick="get(1)" src="immg/s1.jpg"></div><div class="col"><a id="s2"><img id="src" onclick="get(2)" class="image" src="immg/s2.jpg"></a></div><div class="col"><a id="s3"><img id="src" onclick="get(3)" class="image" src="immg/s3.jpg"></a></div>';
+  var i1 ='<div class="col"><img onclick="get(21)" class="image" src="immg/e1.jpg"></div><div class="col"><img onclick="get(22)" class="image" src="immg/e2.jpg"></div><div class="col"><img onclick="get(23)" class="image" src="immg/e1.jpg"></div>';
+  var g1 ='<div class="col"><img onclick="get(31)" class="image" src="immg/g1.jpg"></div><div class="col"><img onclick="get(32)" class="image" src="immg/g2.jpg"></div><div class="col"><img onclick="get(33)" class="image" src="immg/g3.jpg"></div>';
+  var p1 ='<div class="col"><img onclick="get(41)" class="image" src="immg/por1.jpg"></div><div class="col"><img onclick="get(42)" class="image" src="immg/por2.jpg"></div><div class="col"><img onclick="get(43)" class="image" src="immg/por3.jpg"></div>';
 
   if(o1=="s"){
    document.getElementById("sel").innerHTML=s1;
@@ -110,53 +110,84 @@ var l2 = /[0-9]/g;
   document.getElementById("sel").innerHTML=p1;
 
 }
-                       }
-  
+ }
       
-  
+function get(n){
+    if(n===1){
+   var src= 'immg/s1.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===2){
+   var src= 'immg/s2.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===3){
+   var src= 'immg/s3.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===21){
+   var src= 'immg/e1.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===22){
+   var src= 'immg/e2.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===23){
+   var src= 'immg/e1.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===31){
+   var src= 'immg/g1.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===32){
+   var src= 'immg/g2.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===33){
+   var src= 'immg/g3.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===41){
+   var src= 'immg/por1.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===42){
+   var src= 'immg/por2.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }else  if(n===43){
+   var src= 'immg/por3.jpg';
+    document.getElementById('light').src=src;
+document.getElementById('light').style.display="block";
+document.getElementById('close').style.display="block";
+    }
+}
       
-   /* document.getElementById("sel1").addEventListener("change", select1);
-
-     function select1() {
-  var a1=document.getElementById("sel1").value;
-  var city ='<option value="s">صنعاء</option></br><option value="i">اب</option>';
-  var city2 ='<option value="g">القاهرة</option></br><option value="p">بورسعيد</option>';
- if(a1==="y"){
-   document.getElementById("sel2").innerHTML=city;
-
- }else if(a1==="e"){
-  document.getElementById("sel2").innerHTML=city2;
+      
+      
+      function set1(){
+document.getElementById('light').style.display="none";
+document.getElementById('close').style.display="none";
+    
 }
-}
-    document.getElementById("sel2").addEventListener("change", select2);
 
-function select2() {
-  var a2=document.getElementById("sel2").value;
-  var s1 ='<div class="col"><img class="w-100" src="immg/s1.jpg"></div><div class="col"><img class="w-100" src="immg/s2.jpg"></div><div class="col"><img class="w-100" src="immg/s1.jpg"></div>';
-  var i1 ='<div class="col"><img class="w-100" src="immg/e1.jpg"></div><div class="col"><img class="w-100" src="immg/e2.jpg"></div><div class="col"><img class="w-100" src="immg/e1.jpg"></div>';
-  var g1 ='<div class="col"><img class="w-100" src="immg/g1.jpg"></div><div class="col"><img class="w-100" src="immg/g2.jpg"></div><div class="col"><img class="w-100" src="immg/g3.jpg"></div>';
-  var p1 ='<div class="col"><img class="w-100" src="immg/por1.jpg"></div><div class="col"><img class="w-100" src="immg/por2.jpg"></div><div class="col"><img class="w-100" src="immg/por3.jpg"></div>';
-
-  if(a2==="s"){
-   document.getElementById("sel").innerHTML=s1;
-
- }else if(a2==="i"){
-  document.getElementById("sel").innerHTML=i1;
-
-}else if(a2==="g"){
-  document.getElementById("sel").innerHTML=g1;
-
-}else if(a2==="p"){
-  document.getElementById("sel").innerHTML=p1;
-
-}else{alert("no thing");}
-}
-*/
       
   </script>
   </div>
 </section>
-
 
 
    <!--js style-->
