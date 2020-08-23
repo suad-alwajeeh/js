@@ -18,31 +18,31 @@
          <div class="container">
          <form action="index.html" id="form" name="form1" onsubmit="return valid();">
             <div class="form-group">
-              <input type="text" name="name"  id="name" class="form-control" placeholder="your name" aria-describedby="helpId">
+              <input type="text" name="name"  id="name" onkeyup="nameval()" class="form-control" placeholder="your name" >
               <div id="message"></div>
             </div>
             <div class="form-group">
-              <input type="text" name="age"  id="age" class="form-control" placeholder="your age" aria-describedby="helpId">
+              <input type="date" name="age"  id="age" class="form-control" placeholder="your age" onkeyup="date()">
               <div id="message1"></div>
 
             </div>
             <div class="form-group">
-              <input type="email" name="email"  id="email" class="form-control" placeholder="email address" aria-describedby="helpId">
+              <input type="email" name="email"  id="email" class="form-control" placeholder="email address" onkeyup="Validemail()">
               <div id="message2"></div>
 
             </div>
             <div class="form-group">
-              <input type="password" name="pass"  id="pass" class="form-control" placeholder="password" aria-describedby="helpId">
+              <input type="password" name="pass"  id="pass" class="form-control" placeholder="password" onkeyup="validatePassword()">
               <div id="message3"></div>
 
             </div>
             <div class="form-group">
-              <input type="password" name="conpass"  id="conpass" class="form-control" placeholder="confirm password" aria-describedby="helpId">
+              <input type="password" name="conpass"  id="conpass" class="form-control" placeholder="confirm password" onkeyup="validatePasswordcon()">
               <div id="message4"></div>
 
             </div>
             <div class="form-group">
-              <input type="url" name="website"  id="website" class="form-control" placeholder="website" aria-describedby="helpId">
+              <input type="url" name="website"  id="website" class="form-control" placeholder="website" onkeyup="ValidURL()">
               <div id="message5"></div>
 
             </div>
@@ -57,9 +57,7 @@
     </div>
   </div>
   <script>
-    
-    function valid(){
-
+       function valid(){
     var form=document.getElementById("form");
   var name=document.form1.name.value;
   var pass=document.getElementById("pass").value;
@@ -67,10 +65,9 @@
   var email=document.getElementById("email").value;
   var age=document.getElementById("age").value;
   var website=document.getElementById("website").value;
-  var at=email.indexOf("@");  
-    var dot=email.lastIndexOf("."); 
-              var numbers = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])$/;
-
+   
+ var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+console.log(strongRegex);
 
     if(name=="" && age=="" && email=="" && pass=="" && conpass==""&& website==""){
     document.getElementById("message").innerHTML="<h6 style='color:yellow;'>name can't be blank, this file requaiyellow</h6>";
@@ -113,18 +110,82 @@ else if (conpass != pass){
 
 document.getElementById("message4").innerHTML="<h6 style='color:yellow;'>confpass must be as pass </h6>";
 return false;
-}else if (at<1 || dot<at+2 || dot+2>=x.length)
-        {  
-          document.getElementById("message2").innerHTML="<h6 style='color:yellow;'>email must containt @ and . </h6>";
-      return false;  
-      }else if (pass.match(/[a-z]/g) && pass.match(/[A-Z]/g) && pass.match(/[0-9]/g)) {
-          alert("nooooooooooooooooooooooooo");
-      }
+}
         else{}
           
-          }  
-          
-   
+          } 
+      function nameval() {
+    var name = document.getElementById('name').value;
+    var minNumberofChars = 3;
+  
+    if(name.length < minNumberofChars) {
+        document.getElementById('message').innerHTML="name should contain atleast one 3 character";
+        return false;
+    } else  {
+        document.getElementById('message').innerHTML="";
+        return true;
+    }
+}
+       function validatePassword() {
+    var newPassword = document.getElementById('pass').value;
+    var minNumberofChars = 6;
+    var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+  
+    if(!regularExpression.test(newPassword) && newPassword.length < minNumberofChars) {
+        document.getElementById('message3').innerHTML="password should contain atleast one number and one special character";
+        return false;
+    } else  {
+        document.getElementById('message3').innerHTML="";
+        return true;
+    }
+}
+       function validatePasswordcon() {
+    var newPassword = document.getElementById('pass').value;
+    var newPasswordcon = document.getElementById('conpass').value;  
+    if(newPasswordcon != newPassword) {
+        document.getElementById('message4').innerHTML="password conf. should be as password";
+        return false;
+    } else  {
+        document.getElementById('message4').innerHTML="";
+        return true;
+    }
+}
+       function date() {
+    var age = document.getElementById('age').value;
+    var maidate = 2002;
+var date = new Date(age);
+
+if(date.getFullYear() >2002) {
+        document.getElementById('message1').innerHTML="your age must be 18 or more than 18";
+}   else  {
+        document.getElementById('message1').innerHTML="";
+        return true;
+    }
+}
+      function ValidURL() {
+     var me = document.getElementById('website').value;
+  var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+  if(!regex .test(me)) {
+      document.getElementById('message5').innerHTML="Please enter valid URL.";
+    return false;
+  } else {
+              document.getElementById('message5').innerHTML="";
+    return true;
+  }
+}
+      function Validemail() {
+            var email=document.getElementById("email").value;
+          var at=email.indexOf("@");  
+    var dot=email.lastIndexOf(".");
+      if (at<1 || dot<at+2)
+        {  
+          document.getElementById("message2").innerHTML="<h6 >email must containt @ and . </h6>";
+      return false;  
+      }else  {  
+          document.getElementById("message2").innerHTML="";
+      return true;  
+      }
+      }
 </script>
 </section>
 
